@@ -1,0 +1,48 @@
+site_name: Self Learning Journey
+repo_url: https://github.com/xiong-ZH-zq/Self-Learning-Journey
+repo_name: Self-Learning-Journey
+theme:
+  name: material
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+      primary: teal
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: indigo
+  features:
+    - navigation.tabs
+  font:
+    text: PT Serif
+
+markdown_extensions:
+  - meta
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+        generic: true
+        
+plugins:
+  - search
+  - callouts
+extra_javascript:
+  - javascripts/katex.js 
+  # - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+extra_css:
+  - css/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+extra: 
+  attachments: "assets"
