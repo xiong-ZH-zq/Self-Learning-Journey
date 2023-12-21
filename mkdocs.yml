@@ -1,7 +1,8 @@
 site_name: Self Learning Journey
 repo_url: https://github.com/xiong-ZH-zq/Self-Learning-Journey
-repo_name: Self-Learning-Journey
+repo_name: Self Learning Journey
 theme:
+  language: zh
   name: material
   palette: 
     # Palette toggle for light mode
@@ -19,6 +20,7 @@ theme:
       primary: indigo
   features:
     - navigation.tabs
+    - navigation.path
   font:
     text: PT Serif
 
@@ -27,14 +29,36 @@ markdown_extensions:
   - nl2br
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tilde
   - pymdownx.arithmatex:
         generic: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
         
 plugins:
-  - search
+  - search:
+      separator: '[\s\u200b\-]'
   - callouts
+  - tags
+  - blog:
+      enabled: true
+      blog_dir: ./blog 
+      blog_toc: true
+      post_date_format: full
+      post_dir: "{blog}/articles"
+      categories: true
+      categories_name: Categories
+      archive_name: "归档"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 extra_javascript:
   - javascripts/katex.js 
   # - javascripts/mathjax.js
